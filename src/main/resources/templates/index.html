@@ -1,0 +1,43 @@
+
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta http-equiv="Content-Type" content="text/html"; charset="ISO-8859-1">
+<title>Insert title here</title>
+</head>
+<body>
+
+	<h2 align="center">LISTADO</h2>
+	<p align="center">
+<div th:if="${personal.isEmpty()}"></div>	
+	<table border="2" align="center" width="75%"
+	th:if="${not personal.isEmpty()}"
+	 >
+		<tr>
+			<th>NUMERO</th>
+			<th>NOMBRE</th>
+			<th>CODIGO</th>
+			<th>SUELDO</th>
+			<th>AREA</th>
+						<th>JEFE DE AREA</th>
+
+			<th colspan="2">ACCIONES</th>
+		</tr>
+	
+		<tr  th:each="personal: ${personal}">
+			<td th:text="${personal.nombreP}"></td>
+			<td th:text="${personal.id}"></td>
+			<td th:text="${personal.sueldo}"></td>
+			<td th:text="${personal.nombreA}"></td>
+			<td th:text="${personal.Jefe}"></td>
+			
+			
+					</td>
+		</tr>
+	}	  
+}
+
+	</table>
+
+</body>
+</html>
